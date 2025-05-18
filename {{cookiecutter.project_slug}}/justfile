@@ -6,7 +6,12 @@
 #build:
 #  npm run build
 
+unexport OPENAI_API_KEY
+
 _default:
     just --list
+
+dev:
+    pnpm dev
 
 {%- endraw %}
