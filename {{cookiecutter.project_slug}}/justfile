@@ -1,3 +1,4 @@
+{% raw -%}
 #!/usr/bin/env just --justfile
 
 #export PATH := join(justfile_directory(), "node_modules", "bin") + ":" + env_var('PATH')
@@ -8,8 +9,4 @@
 _default:
     just --list
 
-prisma-migrate NAME:
-    pnpx prisma migrate dev --name "{{NAME}}"
-
-prisma-create-migration NAME:
-    pnpx prisma migrate dev --create-only --name "{{NAME}}"
+{%- endraw %}
