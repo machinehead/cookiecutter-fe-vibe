@@ -14,4 +14,7 @@ _default:
 dev:
     pnpm dev
 
+prisma-migrate NAME:
+    pnpx dotenv-cli -e .env.local prisma migrate dev --name "{{NAME}}"
+
 {%- endraw %}
