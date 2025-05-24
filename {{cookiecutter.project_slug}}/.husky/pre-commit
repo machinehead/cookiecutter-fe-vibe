@@ -1,2 +1,2 @@
-pnpm lint
-tsc
+pnpx lint-staged
+pnpm tsc
