@@ -21,7 +21,7 @@ export default defineConfig([
   pluginReact.configs.flat["jsx-runtime"],
   pluginNext.flatConfig.recommended,
   pluginNext.flatConfig.coreWebVitals,
-  globalIgnores([".next/*", "**/generated/**"]),
+  globalIgnores([".next/*", "**/generated/**", ".sst/*", ".open-next/*"]),
   {
     // https://www.npmjs.com/package/eslint-plugin-unused-imports
     plugins: {

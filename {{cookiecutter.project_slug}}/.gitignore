@@ -28,3 +28,9 @@ next-env.d.ts
 /generated/
 
 /.eslintcache
+
+# sst
+.sst
+
+# open-next
+.open-next

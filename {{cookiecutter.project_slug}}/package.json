@@ -12,7 +12,7 @@
     "tsc": "tsc --noEmit",
     "//": "https://www.prisma.io/docs/orm/more/help-and-troubleshooting/vercel-caching-issue",
     "postinstall": "prisma generate",
-    "migrate:postgres": "dotenv -e .env.prod prisma migrate deploy",
+    "migrate:postgres": "dotenv -e .env.production prisma migrate deploy",
     "checks": "eslint && tsc && pnpm build"
   },
   "dependencies": {
