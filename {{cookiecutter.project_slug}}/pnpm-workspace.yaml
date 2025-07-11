@@ -4,5 +4,9 @@ packages:
 onlyBuiltDependencies:
   - '@prisma/client'
   - '@prisma/engines'
+  - core-js
+  - dd-trace
+  - esbuild
   - prisma
+  - protobufjs
   - sharp
