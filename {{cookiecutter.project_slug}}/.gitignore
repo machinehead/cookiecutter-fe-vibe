@@ -1,12 +1,16 @@
 # dependencies
-/node_modules
+node_modules
 
 # next.js
-/.next/
+.next
 /out/
+
+# testing
+**/coverage/
 
 # production
 /build
+dist
 
 # debug
 npm-debug.log*
@@ -25,15 +29,16 @@ yarn-error.log*
 next-env.d.ts
 
 .aider*
+generated
 
-.DS_Store
-
-/generated/
-
-/.eslintcache
+.eslintcache
 
 # sst
 .sst
+# Exclude auto-generated SST env files in packages (keep root one)
+packages/*/sst-env.d.ts
 
 # open-next
 .open-next
+
+techdesign

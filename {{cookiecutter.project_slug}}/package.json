@@ -11,8 +11,8 @@
     "prepare": "husky",
     "tsc": "tsc --noEmit",
     "//": "https://www.prisma.io/docs/orm/more/help-and-troubleshooting/vercel-caching-issue",
-    "postinstall": "prisma generate",
-    "migrate:postgres": "dotenv -e .env.production prisma migrate deploy",
+    "postinstall": "packages/{{cookiecutter.db_package_name}}/prisma generate",
+    "migrate:postgres": "dotenv -e .env.production packages/{{cookiecutter.db_package_name}}/prisma migrate deploy",
     "checks": "eslint && tsc && pnpm build"
   },
   "dependencies": {
