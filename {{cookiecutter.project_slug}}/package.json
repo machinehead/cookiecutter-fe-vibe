@@ -5,14 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm -r build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "pnpm -r lint",
     "prepare": "husky",
     "tsc": "tsc --noEmit",
     "//": "https://www.prisma.io/docs/orm/more/help-and-troubleshooting/vercel-caching-issue",
-    "postinstall": "packages/{{cookiecutter.db_package_name}}/prisma generate",
-    "migrate:postgres": "dotenv -e .env.production packages/{{cookiecutter.db_package_name}}/prisma migrate deploy",
+    "postinstall": "pnpm --filter @local/{{cookiecutter.db_package_name}} db:generate build",
+    "migrate:postgres": "dotenv -e .env.production -- pnpm --filter @local/{{cookiecutter.db_package_name}} db:deploy",
     "checks": "eslint && tsc && pnpm build"
   },
   "dependencies": {
