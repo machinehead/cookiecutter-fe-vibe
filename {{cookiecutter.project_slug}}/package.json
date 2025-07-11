@@ -4,9 +4,9 @@
   "packageManager": "pnpm@10.10.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "pnpm --filter @local/webapp dev",
     "build": "pnpm -r build",
-    "start": "next start",
+    "start": "pnpm --filter @local/webapp start",
     "lint": "pnpm -r lint",
     "prepare": "husky",
     "tsc": "tsc --noEmit",
