@@ -1,5 +1,5 @@
 {
-  "name": "{{ cookiecutter.project_name }}",
+  "name": "{{ cookiecutter.project_slug }}-workspace",
   "version": "0.1.0",
   "packageManager": "pnpm@10.10.0",
   "private": true,
