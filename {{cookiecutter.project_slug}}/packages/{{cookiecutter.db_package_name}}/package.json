@@ -21,12 +21,13 @@
     }
   },
   "scripts": {
-    "postinstall": "pnpm db:generate build",
+    "postinstall": "pnpm db:generate",
     "build": "tsc && cp -r src/generated dist/src/",
     "typecheck": "tsc --noEmit",
     "test": "jest --config jest.config.cjs",
     "test:watch": "jest --watch",
     "db:generate": "dotenv -e ../../.env.staging prisma generate --sql",
+    "postdb:generate": "pnpm build",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio"
