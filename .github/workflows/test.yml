@@ -13,6 +13,8 @@ jobs:
         uses: actions/setup-python@v5.6.0
 
       - uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
 
       - name: Install cruft
         run: |
@@ -23,4 +25,3 @@ jobs:
           cruft create . --output-dir tests --extra-context '{"project_name": "abc"}' --no-input
           cd tests/abc
           pnpm install build test
-
