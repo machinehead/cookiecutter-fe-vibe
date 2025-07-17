@@ -24,4 +24,6 @@ jobs:
         run: |
           cruft create . --output-dir tests --extra-context '{"project_name": "abc"}' --no-input
           cd tests/abc
+          echo "model User { id Int @id @default(autoincrement()) }" >> packages/shared/prisma/schema.prisma
+
           pnpm install build test
