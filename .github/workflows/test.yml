@@ -21,9 +21,4 @@ jobs:
           pip install cruft
 
       - name: Create a new project with cruft
-        run: |
-          cruft create . --output-dir tests --extra-context '{"project_name": "abc"}' --no-input
-          cd tests/abc
-          cat packages/shared/prisma/schema.prisma
-
-          pnpm install build test lint
+        run: ./scripts/create_test_project.sh
