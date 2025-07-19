@@ -24,7 +24,7 @@
     "postinstall": "pnpm db:generate",
     "build": "tsc && cp -r src/generated dist/src/",
     "typecheck": "tsc --noEmit",
-    "test": "jest --config jest.config.cjs --passWithNoTests",
+    "test": "jest --config jest.config.cjs",
     "test:watch": "jest --watch",
     "db:generate": "dotenv -e ../../.env.staging prisma generate --sql",
     "postdb:generate": "pnpm build",
