@@ -5,7 +5,7 @@
 
 set -e
 
-rm -r tests/abc
+rm -rf tests/abc
 
 echo "Creating new project with cruft..."
 cruft create . --output-dir tests --extra-context '{"project_name": "abc"}' --no-input
