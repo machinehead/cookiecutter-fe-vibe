@@ -13,9 +13,6 @@ cruft create . --output-dir tests --extra-context '{"project_name": "abc"}' --no
 echo "Navigating to project directory..."
 cd tests/abc
 
-echo "Checking Prisma schema..."
-cat packages/shared/prisma/schema.prisma
-
 echo "Installing dependencies and running build, test, lint..."
 pnpm install
 pnpm build
