@@ -22,7 +22,7 @@
     "@datadog/browser-core": "^6.12.0",
     "@datadog/browser-rum": "^6.12.0",
     "@hookform/resolvers": "^3.10.0",
-    "@ilyanekhay/ai-plumbing": "^3.0.1",
+    "@ilyanekhay/ai-plumbing": "^3.2.0",
     "@local/{{cookiecutter.db_package_name}}": "workspace:*",
     "@neondatabase/serverless": "^1.0.1",
     "@next/third-parties": "^15.3.3",

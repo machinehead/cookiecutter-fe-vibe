@@ -1,0 +1,4 @@
+{
+  "workflows/*.{yml,yaml}": "actionlint",
+  "*.{css,md,json}": "prettier --write"
+}

@@ -1,11 +1,10 @@
 // import js from "@eslint/js";
 // import globals from "globals";
 import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import pluginNext from "@next/eslint-plugin-next";
 import { defineConfig, globalIgnores } from "eslint/config";
 import unusedImports from "eslint-plugin-unused-imports";
 // import stylistic from "@stylistic/eslint-plugin";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
   // {
@@ -18,10 +17,7 @@ export default defineConfig([
   //   languageOptions: { globals: { ...globals.browser, ...globals.node } },
   // },
   tseslint.configs.recommended,
-  pluginReact.configs.flat["jsx-runtime"],
-  pluginNext.flatConfig.recommended,
-  pluginNext.flatConfig.coreWebVitals,
-  globalIgnores([".next/*", "**/generated/**", ".sst/*", ".open-next/*"]),
+  globalIgnores(["dist/*", "src/generated/*", "sst-env.d.ts"]),
   {
     // https://www.npmjs.com/package/eslint-plugin-unused-imports
     plugins: {
@@ -42,7 +38,22 @@ export default defineConfig([
     },
   },
   {
-    files: ["**/*.cjs"],
+    // TypeScript ESLint deprecation rule - https://typescript-eslint.io/rules/no-deprecated/
+    files: ["**/*.{ts,tsx}"],
+    ignores: ["sst.config.ts"],
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    rules: {
+      "@typescript-eslint/no-deprecated": "warn",
+    },
+  },
+  {
+    // Disable TypeScript rules for JavaScript files
+    files: ["**/*.js"],
     rules: {
       "@typescript-eslint/no-require-imports": "off",
     },
@@ -57,4 +68,5 @@ export default defineConfig([
   //   jsx: true,
   //   // ...
   // }),
+  eslintConfigPrettier,
 ]);
