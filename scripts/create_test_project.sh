@@ -16,7 +16,7 @@ cd tests/abc
 echo "Installing dependencies and running build, test, lint..."
 pnpm install
 pnpm build
-pnpm test
+CI=1 pnpm test
 pnpm lint
 
 echo "Project creation and testing completed successfully!"
