@@ -1,0 +1,5 @@
+{
+  "buildCommand": ". scripts/vercel-env.sh && pnpm -r build",
+  "outputDirectory": "packages/webapp/.next",
+  "framework": "nextjs"
+}

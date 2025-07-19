@@ -1,0 +1,2 @@
+## Project Insights
+- In this project, any changes to the cookiecutter template won't be used by tests/cruft unless they're committed to git. If a test fails locally, this might be due to changes fixing that test not having been committed.

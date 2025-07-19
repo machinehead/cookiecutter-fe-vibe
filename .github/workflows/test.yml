@@ -1,0 +1,24 @@
+name: test.yml
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5.6.0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
+
+      - name: Install cruft
+        run: |
+          pip install cruft
+
+      - name: Create a new project with cruft
+        run: ./scripts/create_test_project.sh

@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -10,7 +11,6 @@ const nextConfig = {
     unoptimized: true,
   },
   logging: {
-    level: "debug",
     fetches: {
       fullUrl: true,
     },

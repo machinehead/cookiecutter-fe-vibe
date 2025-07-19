@@ -1,16 +1,17 @@
+{% raw -%}
+
 name: Build
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4.2.2
+    uses: machinehead/cicd/.github/workflows/typescript-ci.yml@main
+    with:
+      node-version: '23'
+    secrets:
+      token: ${{ secrets.SUBMODULE_PAT }}
+      DOTENVENC_PASS: ${{ secrets.DOTENVENC_PASS }}
 
-      - uses: pnpm/action-setup@v4
-        with:
-          run_install: true
-
-      - name: Compile with tsc
-        run: pnpm tsc
+{%- endraw %}

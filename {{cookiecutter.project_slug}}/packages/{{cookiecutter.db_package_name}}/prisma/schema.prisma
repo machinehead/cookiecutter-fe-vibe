@@ -7,16 +7,20 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters", "fullTextSearchPostgres"]
-  output          = "../generated/prisma"
-  binaryTargets   = ["native", "rhel-openssl-3.0.x"]
+  output          = "../src/generated/prisma"
+  binaryTargets   = ["native", "rhel-openssl-3.0.x", "debian-openssl-3.0.x"]
 }
 
 generator zod {
   provider = "zod-prisma-types"
-  output   = "../generated/zod"
+  output   = "../src/generated/zod"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Blah {
+  id Int @id @default(autoincrement())
 }

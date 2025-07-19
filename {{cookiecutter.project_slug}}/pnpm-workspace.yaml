@@ -1,5 +1,14 @@
+packages:
+  - packages/*
+
 onlyBuiltDependencies:
   - '@prisma/client'
   - '@prisma/engines'
+  - aws-sdk
+  - core-js
+  - dd-trace
+  - esbuild
   - prisma
+  - protobufjs
   - sharp
+  - unrs-resolver
