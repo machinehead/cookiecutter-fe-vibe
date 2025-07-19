@@ -42,6 +42,7 @@
     "@prisma/adapter-neon": "^6.11.1",
     "@prisma/client": "^6.11.1",
     "@prisma/instrumentation": "^6.11.1",
+    "@tka85/dotenvenc": "^5.4.2",
     "ai": "^4.3.16",
     "dedent": "^1.6.0",
     "prisma": "^6.11.1",
